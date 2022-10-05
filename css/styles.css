@@ -569,7 +569,7 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .footform-input:hover,
-.footform-input:active {
+.footform-input:focus {
   background-color: var(--dark-grey-background);
   color: var(--accent-color);
   border-color: var(--accent-color);
@@ -618,7 +618,7 @@ p {
   right: 28px;
 }
 .btn-footform:hover,
-.btn-footform:active {
+.btn-footform:focus {
   background-color: #188ce8;
 }
 
@@ -786,7 +786,9 @@ p {
 }
 .close-button {
   position: absolute;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   border-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -803,15 +805,6 @@ p {
   fill: var(--accent-color);
 }
 
-.form-title {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.15;
-  text-align: center;
-  margin-bottom: 12px;
-}
-
 .form {
   width: 448px;
   /* outline: 1px solid red; */
@@ -819,6 +812,16 @@ p {
   margin-right: auto;
   display: flex;
   flex-direction: column;
+}
+
+.form-title {
+  display: block;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--title-text-color);
 }
 
 .form-field {
@@ -863,16 +866,19 @@ p {
   transform: translateY(-50%);
 }
 
+.form-field:hover input,
+.form-field:hover textarea,
+.form-field:focus input,
+.form-field:focus textarea {
+border-color: var(--accent-color);
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .form-field:hover .svg-item,
 .form-field:focus .svg-item {
   fill: var(--accent-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-}
-
-.form-field:hover input,
-.form-field:hover textarea {
-  border-color: var(--accent-color);
 }
 
 .textarea {
